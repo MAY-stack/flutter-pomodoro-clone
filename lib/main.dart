@@ -1,36 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:mintoon/screens/home_screen.dart';
 
 void main() {
   runApp(const App());
 }
 
-class App extends StatefulWidget {
+class App extends StatelessWidget {
   //Widget의 State만 생성 함
   const App({super.key});
-
-  @override
-  State<App> createState() => _AppState();
-}
-
-class _AppState extends State<App> {
-  //UI를 작성하는 곳 => 이곳의 데이터가 바뀌면 ui가 refresh 되면서 최신 데이터를 보여 준다.
-
-  int counter = 0;
-  List<int> numbers = [];
-
-  bool showTitle = true;
-
-  void toggleTitle() {
-    setState(() {
-      showTitle = !showTitle;
-    });
-  }
-
-  void onClicked() {
-    setState(() {
-      numbers.add(numbers.length);
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,9 +23,7 @@ class _AppState extends State<App> {
         ),
         cardColor: const Color(0xfff4eddb),
       ),
-      home: const Scaffold(
-        body: Center(),
-      ),
+      home: const HomeScreen(),
     );
   }
 }
